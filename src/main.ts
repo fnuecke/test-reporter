@@ -188,7 +188,7 @@ class TestReporter {
       core.info('Summary content:')
       core.info(summary)
       core.summary.addRaw(`# ${shortSummary}`)
-      await core.summary.addRaw(summary).write()
+      await core.summary.addRaw(summary).addRaw('\n\n').write()
     } else {
       core.info(`Creating check run ${name}`)
       const createResp = await this.octokit.rest.checks.create({
